@@ -1,21 +1,15 @@
 package seoultech.gdsc.web.user.domain;
 
 import lombok.*;
+import seoultech.gdsc.web.common.domain.BaseEntity;
 
 import javax.persistence.*;
-import java.time.LocalDateTime;
 
 @Entity
 @Getter
-@Builder
-@AllArgsConstructor
+@Setter
 @NoArgsConstructor
-public class UserDomain {
-  @Id
-  @Column(nullable = false)
-  @GeneratedValue(strategy = GenerationType.IDENTITY)
-  private int id;
-
+public class UserEntity extends BaseEntity {
   @Column(nullable = false)
   private String userId;
 
@@ -39,4 +33,15 @@ public class UserDomain {
 
   private String profilePic;
 
+  @Builder
+  public UserEntity(String userId, String password, String email, String hp, String name, String nickname, String major, String profilePic) {
+    this.userId = userId;
+    this.password = password;
+    this.email = email;
+    this.hp = hp;
+    this.name = name;
+    this.nickname = nickname;
+    this.major = major;
+    this.profilePic = profilePic;
+  }
 }

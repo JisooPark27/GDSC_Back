@@ -5,10 +5,10 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public class SaveUser {
 
-  private final UserDomainRepository userRepository;
+  private final UserEntityRepository userRepository;
 
-  public UserDomain save() {
-    UserDomain newUser = UserDomain.builder()
+  public UserEntity save() {
+    UserEntity newUser = UserEntity.builder()
       .userId("userId")
       .password("password")
       .email("email")
@@ -18,7 +18,7 @@ public class SaveUser {
       .major("major")
       .build();
 
-    UserDomain save = userRepository.save(newUser);
+    UserEntity save = userRepository.save(newUser);
 
     return save;
   }
