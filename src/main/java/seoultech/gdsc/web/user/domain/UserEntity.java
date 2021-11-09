@@ -34,7 +34,8 @@ public class UserEntity extends BaseEntity {
   private String profilePic;
 
   @Builder
-  public UserEntity(String userId, String password, String email, String hp, String name, String nickname, String major, String profilePic) {
+  public UserEntity(String userId, String password, String email, String hp, String name,
+                    String nickname, String major, String profilePic) {
     this.userId = userId;
     this.password = password;
     this.email = email;
