@@ -3,7 +3,7 @@ package seoultech.gdsc.web.comment.domain;
 import lombok.Builder;
 import lombok.NoArgsConstructor;
 import seoultech.gdsc.web.common.domain.BaseEntity;
-import seoultech.gdsc.web.user.domain.UserEntity;
+import seoultech.gdsc.web.user.domain.User;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -20,10 +20,10 @@ public class CommentEntity extends BaseEntity {
   private int refId;
 
   @ManyToOne
-  private UserEntity userId;
+  private User userId;
 
   @Builder
-  public CommentEntity(int likeCategory, int refId, UserEntity userId) {
+  public CommentEntity(int likeCategory, int refId, User userId) {
     this.likeCategory = likeCategory;
     this.refId = refId;
     this.userId = userId;

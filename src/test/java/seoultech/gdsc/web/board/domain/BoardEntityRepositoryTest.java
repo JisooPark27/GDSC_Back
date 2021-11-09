@@ -4,8 +4,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import seoultech.gdsc.web.user.domain.UserEntity;
-import seoultech.gdsc.web.user.domain.UserEntityRepository;
+import seoultech.gdsc.web.user.domain.User;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.is;
@@ -18,11 +17,11 @@ class BoardEntityRepositoryTest {
   private BoardEntityRepository repository;
 
   @Autowired
-  private UserEntityRepository userRepository;
+  private seoultech.gdsc.web.user.domain.userRepository userRepository;
 
   @BeforeEach
   void setUser() {
-    UserEntity newUser = UserEntity.builder()
+    User newUser = User.builder()
       .name("Jisoo Park")
       .email("jsjs@gmail.com")
       .userId("jspark")
@@ -38,7 +37,7 @@ class BoardEntityRepositoryTest {
   @Test
   void repositoryCrudTest() {
     //given
-    UserEntity user = userRepository.findById(1);
+    User user = userRepository.findById(1);
     BoardEntity board1 = BoardEntity.builder()
       .userId(user)
       .title("title")

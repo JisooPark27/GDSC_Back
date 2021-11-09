@@ -3,11 +3,10 @@ package seoultech.gdsc.web.liked.domain;
 import lombok.Builder;
 import lombok.NoArgsConstructor;
 import seoultech.gdsc.web.common.domain.BaseEntity;
-import seoultech.gdsc.web.user.domain.UserEntity;
+import seoultech.gdsc.web.user.domain.User;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
 @Entity
@@ -22,10 +21,10 @@ public class LikedEntity extends BaseEntity {
 
   @ManyToOne
 //  @JoinColumn(name = "user_entity_id")
-  private UserEntity toUser;
+  private User toUser;
 
   @Builder
-  public LikedEntity(int likeCategory, int refId, UserEntity toUser) {
+  public LikedEntity(int likeCategory, int refId, User toUser) {
     this.likeCategory = likeCategory;
     this.refId = refId;
     this.toUser = toUser;

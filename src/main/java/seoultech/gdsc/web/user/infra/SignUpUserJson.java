@@ -19,7 +19,7 @@ public class SignUpUserJson {
 
   public SignUpUserJson(String userId, String password, String email, String name, String nickName,
                         String major, String hp) {
-    this.userId = loginId;
+    this.userId = userId;
     this.password = password;
     this.email = email;
     this.name = name;

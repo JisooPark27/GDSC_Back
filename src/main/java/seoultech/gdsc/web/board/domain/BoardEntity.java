@@ -3,7 +3,7 @@ package seoultech.gdsc.web.board.domain;
 import lombok.*;
 import seoultech.gdsc.web.category.domain.CategoryEntity;
 import seoultech.gdsc.web.common.domain.BaseEntity;
-import seoultech.gdsc.web.user.domain.UserEntity;
+import seoultech.gdsc.web.user.domain.User;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -16,7 +16,7 @@ import javax.persistence.ManyToOne;
 public class BoardEntity extends BaseEntity {
 
   @ManyToOne
-  private UserEntity userId;
+  private User userId;
 
   @Column(nullable = false)
   private String title;
@@ -46,7 +46,7 @@ public class BoardEntity extends BaseEntity {
 
   @Builder
   public BoardEntity(
-    UserEntity userId, String title, String content, CategoryEntity category, String imageUrl) {
+          User userId, String title, String content, CategoryEntity category, String imageUrl) {
     this.userId = userId;
     this.title = title;
     this.content = content;

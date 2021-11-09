@@ -16,7 +16,7 @@ class SaveUserTest {
 
   @Test
   void User_저장_테스트() {
-    UserEntity save = saveUser.save();
+    User save = saveUser.save();
 
     assertThat(save.userId(), is("userId"));
 

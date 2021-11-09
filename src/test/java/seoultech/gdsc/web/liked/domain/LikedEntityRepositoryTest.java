@@ -4,14 +4,10 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import seoultech.gdsc.web.message.domain.MessageEntity;
-import seoultech.gdsc.web.message.domain.MessageEntityRepository;
-import seoultech.gdsc.web.user.domain.UserEntity;
-import seoultech.gdsc.web.user.domain.UserEntityRepository;
+import seoultech.gdsc.web.user.domain.User;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.is;
-import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.ArgumentMatchers.any;
 
 @SpringBootTest
@@ -21,11 +17,11 @@ class LikedEntityRepositoryTest {
   private LikedEntityRepository repository;
 
   @Autowired
-  private UserEntityRepository userRepository;
+  private seoultech.gdsc.web.user.domain.userRepository userRepository;
 
   @BeforeEach
   void setUser() {
-    UserEntity newUser = UserEntity.builder()
+    User newUser = User.builder()
       .name("Jisoo Park")
       .email("jsjs@gmail.com")
       .userId("jspark")

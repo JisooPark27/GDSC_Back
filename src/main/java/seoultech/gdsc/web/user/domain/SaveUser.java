@@ -5,11 +5,11 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public class SaveUser {
 
-  private final UserEntityRepository userRepository;
+  private final seoultech.gdsc.web.user.domain.userRepository userRepository;
 
-  public UserEntity save(String userId, String password, String email, String hp, String name,
-                         String nickname, String major) {
-    UserEntity newUser = UserEntity.builder()
+  public User save(String userId, String password, String email, String hp, String name,
+                   String nickname, String major) {
+    User newUser = User.builder()
       .userId(userId)
       .password(password)
       .email(email)
@@ -19,7 +19,7 @@ public class SaveUser {
       .major(major)
       .build();
 
-    UserEntity save = userRepository.save(newUser);
+    User save = userRepository.save(newUser);
 
     return save;
   }
